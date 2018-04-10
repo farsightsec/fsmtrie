@@ -1,0 +1,17 @@
+Source: fsmtrie
+Section: net
+Maintainer: Farsight Security <software@farsightsecurity.com>
+Priority: optional
+Build-Depends: dh-autoreconf, pkg-config, libbsd-dev, check
+
+Package: libfsmtrie1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Fast String Matching library
+
+Package: libfsmtrie-dev
+Section: libdevel
+Architecture: any
+Depends: libfsmtrie1 (= ${binary:Version}), ${misc:Depends}
+Description: Fast String Matching library (development files)

@@ -1,0 +1,27 @@
+#! /usr/bin/make -f
+
+%:
+	dh $@ --with autoreconf --parallel
+
+override_dh_auto_configure:
+	autoconf
+	dh_auto_configure -- $(DEB_CONFIGURE_EXTRA_FLAGS)
+
+# use tmp as dh_install expects
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp --
+
+override_dh_install:
+	dh_install --fail-missing --
+
+#override_dh_installchangelogs:
+#	dh_installchangelogs ../CHANGES
+
+# no stripping until unlikely to crash
+override_dh_strip:
+	DEB_BUILD_OPTIONS=nostrip dh_strip
+
+override_dh_shlibdeps:
+	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+#override_dh_auto_clean:
+#	@echo "keep built files to diagnose problems"

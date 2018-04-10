@@ -1,0 +1,37 @@
+failed to find key some numbers I'm looking for
+failed to find key some other numbers I'm searching for
+failed to find key there are also numbers I'd like to find
+Initializing new fsmtrie options object
+Initializing new token fsmtrie
+Inserting keys...
+Done, inserted 4 keys
+fsmtrie contains 4 nodes and the following 4 leaves:
+    61455 = [once more friend, here are numbers]
+   61933
+  48879
+ 65261
+57005
+    456789012 = [some numbers]
+   3456789012
+  234567890
+ 1234567890
+123456789
+    1 = [some other numbers]
+   4000000000
+  3000000000
+ 2000000000
+1000000000
+    15855310 = [there are also numbers]
+   12237598
+  3222295969
+ 3735944941
+3735928559
+
+Example 1: look for original keys
+found some numbers (leaf = some numbers)
+found some other numbers (leaf = some other numbers)
+found there are also numbers (leaf = there are also numbers)
+found once more friend, here are numbers (leaf = once more friend, here are numbers)
+
+Example 2: look for search terms
+found once more friend, here are numbers I wish I could locate (leaf = once more friend, here are numbers)

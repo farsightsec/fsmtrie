@@ -1,0 +1,5 @@
+fsmtrie (1.0.0-2) debian-fsi; urgency=low
+
+  * initial public release
+
+ -- Farsight Security, Inc. <software@farsightsecurity.com>  Tue, 10 Apr 2018 17:53:15 +0000

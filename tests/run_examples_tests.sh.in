@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# The .cmp files already exist, so run the examples again and compare outputs.
+
+examples/ascii > tests/examples.ascii.out 2>&1
+examples/eascii > tests/examples.eascii.out 2>&1
+examples/token > tests/examples.token.out 2>&1
+
+failed=0
+cmp @abs_top_srcdir@/tests/examples.ascii.cmp tests/examples.ascii.out || failed=1
+cmp @abs_top_srcdir@/tests/examples.eascii.cmp tests/examples.eascii.out || failed=1
+cmp @abs_top_srcdir@/tests/examples.token.cmp tests/examples.token.out || failed=1
+
+if [ "$failed" -eq 1 ]; then
+  echo example comparison failed
+  exit 1
+fi

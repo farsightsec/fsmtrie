@@ -1,0 +1,121 @@
+failed to find key fool
+failed to find key bard
+failed to find key noodles
+failed to find key farsighTsecurity
+Initializing new ASCII fsmtrie options object
+Initializing new ASCII fsmtrie
+Inserting keys...
+Done, inserted 14 keys
+fsmtrie contains 116 nodes and the following 14 leaves:
+bar
+baz
+brady
+brad
+dogs
+farsightsecurity
+foobarbaz
+foo
+fsizn
+fsi
+hate
+love
+sigh
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Example 1: look for original keys
+found foo (leaf = foo)
+found bar (leaf = bar)
+found baz (leaf = baz)
+found brad (leaf = brad)
+found brady (leaf = brady)
+found foobarbaz (leaf = foobarbaz)
+found farsightsecurity (leaf = farsightsecurity)
+found sigh (leaf = sigh)
+found fsi (leaf = fsi)
+found fsizn (leaf = fsizn)
+found love (leaf = love)
+found hate (leaf = hate)
+found dogs (leaf = dogs)
+found xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (leaf = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+
+Example 2: look for search terms with partial matches
+found brad (leaf = brad)
+found baz (leaf = baz)
+found foobarbaz (leaf = foobarbaz)
+found farsightsecurity (leaf = farsightsecurity)
+found fsi (leaf = fsi)
+found love (leaf = love)
+found lo (leaf = (null))
+found dog (leaf = (null))
+found d (leaf = (null))
+found f (leaf = (null))
+
+Example 3: look for search terms with approximate matches (distance of 2)
+looking for fool...
+fool: foo (distance=1)
+looking for bard...
+bard: bar (distance=1)
+bard: baz (distance=2)
+bard: brad (distance=1)
+bard: brady (distance=2)
+looking for brad...
+brad: bar (distance=2)
+brad: baz (distance=2)
+brad: brad (distance=0)
+brad: brady (distance=1)
+looking for baz...
+baz: bar (distance=1)
+baz: baz (distance=0)
+baz: brad (distance=2)
+looking for noodles...
+looking for foobarbaz...
+foobarbaz: foobarbaz (distance=0)
+looking for farsightsecurity...
+farsightsecurity: farsightsecurity (distance=0)
+looking for farsighTsecurity...
+farsighTsecurity: farsightsecurity (distance=1)
+looking for fsi...
+fsi: foo (distance=2)
+fsi: fsi (distance=0)
+fsi: fsizn (distance=2)
+looking for love...
+love: love (distance=0)
+looking for lo...
+lo: foo (distance=2)
+lo: love (distance=2)
+looking for dog...
+dog: dogs (distance=1)
+dog: foo (distance=2)
+looking for d...
+looking for f...
+f: foo (distance=2)
+f: fsi (distance=2)
+
+Example 4: look for search terms with substring matches
+looking for fool...
+fool: foo (offset=0)
+looking for bard...
+bard: bar (offset=0)
+looking for brad...
+brad: brad (offset=0)
+looking for baz...
+baz: baz (offset=0)
+looking for noodles...
+looking for foobarbaz...
+foobarbaz: foo (offset=0)
+foobarbaz: bar (offset=3)
+foobarbaz: foobarbaz (offset=0)
+foobarbaz: baz (offset=6)
+looking for farsightsecurity...
+farsightsecurity: sigh (offset=3)
+farsightsecurity: farsightsecurity (offset=0)
+looking for farsighTsecurity...
+farsighTsecurity: sigh (offset=3)
+looking for fsi...
+fsi: fsi (offset=0)
+looking for love...
+love: love (offset=0)
+looking for lo...
+looking for dog...
+looking for d...
+looking for f...

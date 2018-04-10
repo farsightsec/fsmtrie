@@ -1,0 +1,67 @@
+failed to find key ϜAᚱՏᎥԌᎻᎢ
+failed to find key ՏᎥԌᎻ
+failed to find key ϜÃᚱѕᎥԌНtႽËᏟԱԻᎥТҮ
+failed to find key ϜAᚱՏᎥԌᎻᎢ
+failed to find key ՏᎥԌᎻ
+failed to find key ϜÃᚱѕᎥԌНtႽËᏟԱԻᎥТҮ
+Initializing new EASCII fsmtrie options object
+Initializing new EASCII fsmtrie
+Inserting keys...
+Done, inserted 4 keys
+fsmtrie contains 53 nodes and the following 4 leaves:
+ϜɑᚱՏᎥԌᎻᎢ
+ѕᎥԌН
+ᚱＵᛖⅠ
+ＷᎥＮᏦ
+
+Example 1: look for original keys
+found ϜɑᚱՏᎥԌᎻᎢ (leaf = ϜɑᚱՏᎥԌᎻᎢ)
+found ＷᎥＮᏦ (leaf = ＷᎥＮᏦ)
+found ᚱＵᛖⅠ (leaf = ᚱＵᛖⅠ)
+found ѕᎥԌН (leaf = ѕᎥԌН)
+
+Example 2: look for search terms
+found ϜɑᚱՏᎥԌᎻᎢ (leaf = ϜɑᚱՏᎥԌᎻᎢ)
+found ＷᎥＮᏦ (leaf = ＷᎥＮᏦ)
+found ᚱＵᛖⅠ (leaf = ᚱＵᛖⅠ)
+found Ϝɑᚱ (leaf = (null))
+found ＷᎥＮ (leaf = (null))
+found ᚱＵᛖ (leaf = (null))
+
+Example 3: look for search terms with partial matches
+found ϜɑᚱՏᎥԌᎻᎢ (leaf = ϜɑᚱՏᎥԌᎻᎢ)
+found ＷᎥＮᏦ (leaf = ＷᎥＮᏦ)
+found ᚱＵᛖⅠ (leaf = ᚱＵᛖⅠ)
+found Ϝɑᚱ (leaf = (null))
+found ＷᎥＮ (leaf = (null))
+found ᚱＵᛖ (leaf = (null))
+
+Example 4: look for search terms with approximate matches (distance of 2)
+looking for ϜɑᚱՏᎥԌᎻᎢ...
+ϜɑᚱՏᎥԌᎻᎢ: ϜɑᚱՏᎥԌᎻᎢ (distance=0)
+looking for ＷᎥＮᏦ...
+ＷᎥＮᏦ: ＷᎥＮᏦ (distance=0)
+looking for ᚱＵᛖⅠ...
+ᚱＵᛖⅠ: ᚱＵᛖⅠ (distance=0)
+looking for Ϝɑᚱ...
+looking for ＷᎥＮ...
+looking for ᚱＵᛖ...
+looking for ϜAᚱՏᎥԌᎻᎢ...
+ϜAᚱՏᎥԌᎻᎢ: ϜɑᚱՏᎥԌᎻᎢ (distance=2)
+looking for ՏᎥԌᎻ...
+looking for ϜÃᚱѕᎥԌНtႽËᏟԱԻᎥТҮ...
+
+Example 5: look for search terms with substring matches
+looking for ϜɑᚱՏᎥԌᎻᎢ...
+ϜɑᚱՏᎥԌᎻᎢ: ϜɑᚱՏᎥԌᎻᎢ (offset=0)
+looking for ＷᎥＮᏦ...
+ＷᎥＮᏦ: ＷᎥＮᏦ (offset=0)
+looking for ᚱＵᛖⅠ...
+ᚱＵᛖⅠ: ᚱＵᛖⅠ (offset=0)
+looking for Ϝɑᚱ...
+looking for ＷᎥＮ...
+looking for ᚱＵᛖ...
+looking for ϜAᚱՏᎥԌᎻᎢ...
+looking for ՏᎥԌᎻ...
+looking for ϜÃᚱѕᎥԌНtႽËᏟԱԻᎥТҮ...
+ϜÃᚱѕᎥԌНtႽËᏟԱԻᎥТҮ: ѕᎥԌН (offset=7)
