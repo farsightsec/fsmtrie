@@ -766,6 +766,15 @@ fsmtrie_free(struct fsmtrie *f)
 	f->node_cnt = 0;
 }
 
+void
+fsmtrie_destroy(struct fsmtrie **f)
+{
+	fsmtrie_free(*f);
+
+	free(*f);
+	*f = NULL;
+}
+
 int
 fsmtrie_search_ascii(struct fsmtrie *f, const char *key, const char **str)
 {
