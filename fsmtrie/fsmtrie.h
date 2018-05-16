@@ -293,9 +293,23 @@ bool fsmtrie_insert_token(fsmtrie_t fsmtrie, uint32_t *tkey, size_t nkey,
 /**
  *  Decommission a specified fsmtrie and free all memory associated with it.
  *
- *  \param[in] fsmtrie valid fsmtrie object
+ *  Note that this function does not free the memory associated with fsmtrie,
+ *  and free() should be called to avoid leaking that memory.
+ *
+ *  This function is deprecated in favor of fsmtrie_destroy().
+ *
+ *  \param[in] fsmtrie a valid fsmtrie object
  */
 void fsmtrie_free(fsmtrie_t fsmtrie);
+
+
+/**
+ *  Destroy a specified fsmtrie, freeing all memory associated with it.
+ *
+ *  \param[in] fsmtrie pointer to a valid fsmtrie object
+ */
+void fsmtrie_destroy(fsmtrie_t *fsmtrie);
+
 
 /**
  *  Search a specified fsmtrie for a key. If key is found, str may point to
