@@ -2,6 +2,7 @@ libfsmtrie.so.1 libfsmtrie1 #MINVER#
  _mode_to_str@Base 1.0.0-1
  fsmtrie_error@Base 1.0.0-1
  fsmtrie_free@Base 1.0.0-1
+ fsmtrie_destroy@Base 1.0.0-1
  fsmtrie_get_error@Base 1.0.0-1
  fsmtrie_get_keycnt@Base 1.0.0-1
  fsmtrie_get_nodecnt@Base 1.0.0-1
