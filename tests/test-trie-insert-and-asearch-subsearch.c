@@ -102,7 +102,7 @@ START_TEST(test_trie_insert_and_asearch_subsearch)
 		subsearch_report_trial2, "farsightsecurity"), 1);
 
 	fsmtrie_opt_free(opt);
-	fsmtrie_free(fsmtrie);
+	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
 
