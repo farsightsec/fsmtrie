@@ -61,7 +61,7 @@ START_TEST(test_trie_insert_and_search)
 	ck_assert_ptr_eq(str, NULL);
 
 	fsmtrie_opt_free(opt);
-	fsmtrie_free(fsmtrie);
+	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
 
@@ -137,7 +137,7 @@ START_TEST(test_trie_insert_and_search_token)
 	}
 
 	fsmtrie_opt_free(opt);
-	fsmtrie_free(fsmtrie);
+	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
 
@@ -176,7 +176,7 @@ START_TEST(test_trie_insert_and_search_ml)
 	ck_assert_int_eq(fsmtrie_search(fsmtrie, "xxxxxxxxxx", &str), 0);
 
 	fsmtrie_opt_free(opt);
-	fsmtrie_free(fsmtrie);
+	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
 
@@ -226,7 +226,7 @@ START_TEST(test_trie_insert_and_search_utf8)
 	ck_assert_ptr_eq(str, NULL);
 
 	fsmtrie_opt_free(opt);
-	fsmtrie_free(fsmtrie);
+	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
 
