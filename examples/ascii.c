@@ -116,7 +116,7 @@ int main(int argc, char **argv)
 			fprintf(stderr, "failed to insert key \"%s\": %s\n",
 					keys[n],
 					fsmtrie_error(fsmtrie));
-			fsmtrie_free(fsmtrie);
+			fsmtrie_destroy(&fsmtrie);
 			fsmtrie_opt_free(opt);
 			return (EXIT_FAILURE);
 		}
@@ -205,7 +205,7 @@ int main(int argc, char **argv)
 		}
 	}
 
-	fsmtrie_free(fsmtrie);
+	fsmtrie_destroy(&fsmtrie);
 	fsmtrie_opt_free(opt);
 
 	return (EXIT_SUCCESS);
