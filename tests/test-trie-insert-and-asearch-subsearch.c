@@ -101,7 +101,7 @@ START_TEST(test_trie_insert_and_asearch_subsearch)
 	ck_assert_int_eq(fsmtrie_search_substring(fsmtrie, "farsightsecurity",
 		subsearch_report_trial2, "farsightsecurity"), 1);
 
-	fsmtrie_opt_free(opt);
+	fsmtrie_opt_destroy(opt);
 	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
