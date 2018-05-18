@@ -15,6 +15,7 @@ libfsmtrie.so.1 libfsmtrie1 #MINVER#
  fsmtrie_insert_token@Base 1.0.0-1
  fsmtrie_key_validate_ascii@Base 1.0.0-1
  fsmtrie_opt_free@Base 1.0.0-1
+ fsmtrie_opt_destroy@Base 1.0.0-1
  fsmtrie_opt_get_maxlength@Base 1.0.0-1
  fsmtrie_opt_get_mode@Base 1.0.0-1
  fsmtrie_opt_get_partialmatch@Base 1.0.0-1
