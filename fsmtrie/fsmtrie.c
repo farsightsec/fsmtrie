@@ -164,6 +164,12 @@ fsmtrie_opt_free(struct fsmtrie_opt *o)
 	}
 }
 
+void
+fsmtrie_opt_destroy(struct fsmtrie_opt *o)
+{
+	fsmtrie_opt_free(o);
+}
+
 bool
 fsmtrie_opt_set_mode(struct fsmtrie_opt *o, fsmtrie_mode mode)
 {
