@@ -300,17 +300,19 @@ bool fsmtrie_insert_eascii(fsmtrie_t fsmtrie, const char *key,
 bool fsmtrie_insert_token(fsmtrie_t fsmtrie, uint32_t *tkey, size_t nkey,
 		const char *str);
 
-/**
- *  Decommission a specified fsmtrie and free all memory associated with it.
+/* @cond */
+/*
+ *  Decommission a specified fsmtrie, freeing only the held memory internal
+ *  to the object.
  *
- *  Note that this function does not free the memory associated with fsmtrie,
- *  and free() should be called to avoid leaking that memory.
+ *  Note that this function does not free the memory associated with the
+ *  fsmtrie object wrapper itself and free() should be called to avoid leaking
+ *  that memory.
  *
  *  This function is deprecated in favor of fsmtrie_destroy().
- *
- *  \param[in] fsmtrie a valid fsmtrie object
  */
 void fsmtrie_free(fsmtrie_t fsmtrie);
+/* @endcond */
 
 
 /**
