@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 	if (!fsmtrie_opt_set_mode(opt, fsmtrie_mode_token))
 	{
 		fprintf(stderr, "can't set mode\n");
-		fsmtrie_opt_destroy(opt);
+		fsmtrie_opt_destroy(&opt);
 		return (EXIT_FAILURE);
 	}
 
@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 	if (fsmtrie == NULL)
 	{
 		fprintf(stderr, "%s\n", err_buf);
-		fsmtrie_opt_destroy(opt);
+		fsmtrie_opt_destroy(&opt);
 		return (EXIT_FAILURE);
 	}
 
@@ -87,7 +87,7 @@ int main(int argc, char **argv)
 					key_names[n],
 					fsmtrie_error(fsmtrie));
 			fsmtrie_destroy(&fsmtrie);
-			fsmtrie_opt_destroy(opt);
+			fsmtrie_opt_destroy(&opt);
 			return (EXIT_FAILURE);
 		}
 	}
@@ -142,7 +142,7 @@ int main(int argc, char **argv)
 	}
 
 	fsmtrie_destroy(&fsmtrie);
-	fsmtrie_opt_destroy(opt);
+	fsmtrie_opt_destroy(&opt);
 
 	return (EXIT_SUCCESS);
 }

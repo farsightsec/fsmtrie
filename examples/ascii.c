@@ -83,19 +83,19 @@ int main(int argc, char **argv)
 	if (!fsmtrie_opt_set_mode(opt, fsmtrie_mode_ascii))
 	{
 		fprintf(stderr, "can't set mode\n");
-		fsmtrie_opt_destroy(opt);
+		fsmtrie_opt_destroy(&opt);
 		return (EXIT_FAILURE);
 	}
 	if (!fsmtrie_opt_set_maxlength(opt, 64))
 	{
 		fprintf(stderr, "can't set max length\n");
-		fsmtrie_opt_destroy(opt);
+		fsmtrie_opt_destroy(&opt);
 		return (EXIT_FAILURE);
 	}
 	if (!fsmtrie_opt_set_partialmatch(opt, true))
 	{
 		fprintf(stderr, "can't set partial match flag\n");
-		fsmtrie_opt_destroy(opt);
+		fsmtrie_opt_destroy(&opt);
 		return (EXIT_FAILURE);
 	}
 
@@ -104,7 +104,7 @@ int main(int argc, char **argv)
 	if (fsmtrie == NULL)
 	{
 		fprintf(stderr, "%s\n", err_buf);
-		fsmtrie_opt_destroy(opt);
+		fsmtrie_opt_destroy(&opt);
 		return (EXIT_FAILURE);
 	}
 
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 					keys[n],
 					fsmtrie_error(fsmtrie));
 			fsmtrie_destroy(&fsmtrie);
-			fsmtrie_opt_destroy(opt);
+			fsmtrie_opt_destroy(&opt);
 			return (EXIT_FAILURE);
 		}
 	}
@@ -206,7 +206,7 @@ int main(int argc, char **argv)
 	}
 
 	fsmtrie_destroy(&fsmtrie);
-	fsmtrie_opt_destroy(opt);
+	fsmtrie_opt_destroy(&opt);
 
 	return (EXIT_SUCCESS);
 }
