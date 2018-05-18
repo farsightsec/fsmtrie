@@ -60,7 +60,7 @@ START_TEST(test_trie_insert_and_search)
 	ck_assert_int_eq(fsmtrie_search(fsmtrie, "farsightsecurit", &str), 1);
 	ck_assert_ptr_eq(str, NULL);
 
-	fsmtrie_opt_free(opt);
+	fsmtrie_opt_destroy(opt);
 	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
@@ -136,7 +136,7 @@ START_TEST(test_trie_insert_and_search_token)
 					&str), 0);
 	}
 
-	fsmtrie_opt_free(opt);
+	fsmtrie_opt_destroy(opt);
 	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
@@ -175,7 +175,7 @@ START_TEST(test_trie_insert_and_search_ml)
 	/* test partial match mode: should fail */
 	ck_assert_int_eq(fsmtrie_search(fsmtrie, "xxxxxxxxxx", &str), 0);
 
-	fsmtrie_opt_free(opt);
+	fsmtrie_opt_destroy(opt);
 	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
@@ -225,7 +225,7 @@ START_TEST(test_trie_insert_and_search_utf8)
 	ck_assert_int_eq(fsmtrie_search(fsmtrie, "ѡіΝᛕ", &str), 1);
 	ck_assert_ptr_eq(str, NULL);
 
-	fsmtrie_opt_free(opt);
+	fsmtrie_opt_destroy(opt);
 	fsmtrie_destroy(&fsmtrie);
 }
 END_TEST
