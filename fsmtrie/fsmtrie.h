@@ -148,13 +148,23 @@ fsmtrie_t fsmtrie_init(fsmtrie_opt_t opt, char *err_buf);
  */
 fsmtrie_opt_t fsmtrie_opt_init(void);
 
+/* @cond */
+/*
+ *  Decommission a specified fsmtrie options object and free all memory
+ *  associated with it.
+ *
+ *  This function is deprecated in favor of fsmtrie_opt_destroy().
+ */
+void fsmtrie_opt_free(fsmtrie_opt_t opt);
+/* @endcond */
+
 /**
  *  Decommission a specified fsmtrie options object and free all memory
  *  associated with it.
  *
  *  \param[in] opt valid fsmtrie options object
  */
-void fsmtrie_opt_free(fsmtrie_opt_t opt);
+void fsmtrie_opt_destroy(fsmtrie_opt_t opt);
 
 /**
  *  Set the fsmtrie mode.
