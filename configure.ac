@@ -1,7 +1,7 @@
 AC_PREREQ([2.64])
 
 m4_define(fsmtrie_major_version, 1)
-m4_define(fsmtrie_minor_version, 0)
+m4_define(fsmtrie_minor_version, 1)
 m4_define(fsmtrie_patchlevel_version, 0)
 m4_define(fsmtrie_version,
           fsmtrie_major_version.fsmtrie_minor_version.fsmtrie_patchlevel_version)
