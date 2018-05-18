@@ -165,9 +165,11 @@ fsmtrie_opt_free(struct fsmtrie_opt *o)
 }
 
 void
-fsmtrie_opt_destroy(struct fsmtrie_opt *o)
+fsmtrie_opt_destroy(struct fsmtrie_opt **o)
 {
-	fsmtrie_opt_free(o);
+	fsmtrie_opt_free(*o);
+
+	*o = NULL;
 }
 
 bool
