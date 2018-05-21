@@ -1,6 +1,6 @@
 Source: fsmtrie
 Section: net
-Maintainer: Farsight Security <software@farsightsecurity.com>
+Maintainer: Farsight Security, Inc. <software@farsightsecurity.com>
 Priority: optional
 Build-Depends:
  debhelper (>= 9~),
