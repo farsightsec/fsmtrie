@@ -2,16 +2,32 @@ Source: fsmtrie
 Section: net
 Maintainer: Farsight Security <software@farsightsecurity.com>
 Priority: optional
-Build-Depends: dh-autoreconf, pkg-config, libbsd-dev, check
+Build-Depends:
+ debhelper (>= 9~),
+ dh-autoreconf,
+ pkg-config,
+ libbsd-dev,
+ check
+Standards-Version: 3.9.8
 
 Package: libfsmtrie1
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Fast String Matching library
+ This is the Fast String Matcher Trie project. This C-based library
+ provides a simple API for the storage and fast matching of ASCII,
+ Extended ASCII, and 32-bit wide "token" strings.
+ .
+ This package contains libfsmtrie.
 
 Package: libfsmtrie-dev
 Section: libdevel
 Architecture: any
 Depends: libfsmtrie1 (= ${binary:Version}), ${misc:Depends}
 Description: Fast String Matching library (development files)
+ This is the Fast String Matcher Trie project. This C-based library
+ provides a simple API for the storage and fast matching of ASCII,
+ Extended ASCII, and 32-bit wide "token" strings.
+ .
+ This package contains the header file for libfsmtrie.
