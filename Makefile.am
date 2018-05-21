@@ -52,7 +52,7 @@ fsmtrie_libfsmtrie_la_LIBADD          = ${strlcpy_LIBS}
 #
 #    https://www.gnu.org/software/libtool/manual/libtool.html#Versioning
 #
-fsmtrie_libfsmtrie_la_LDFLAGS         = -version-info 1:0:0
+fsmtrie_libfsmtrie_la_LDFLAGS         = -version-info 2:0:1
 
 # Documentation
 if HAVE_DOXYGEN
