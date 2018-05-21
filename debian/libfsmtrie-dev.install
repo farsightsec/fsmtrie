@@ -1,2 +1,5 @@
 usr/include
 usr/lib/*/pkgconfig/*.pc
+usr/lib/*/libfsmtrie*.so
+usr/lib/*/libfsmtrie.a
+usr/lib/*/libfsmtrie.la
