@@ -1,3 +1,9 @@
+fsmtrie (1.1.0) UNRELEASED; urgency=medium
+
+  * Add new API function fsmtrie_destroy() .
+
+ -- Farsight Security, Inc. <software@farsightsecurity.com>  Mon, 21 May 2018 11:19:16 -0400
+
 fsmtrie (1.0.0-2) debian-fsi; urgency=low
 
   * initial public release
