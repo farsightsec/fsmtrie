@@ -30,4 +30,4 @@ Description: Fast String Matching library (development files)
  provides a simple API for the storage and fast matching of ASCII,
  Extended ASCII, and 32-bit wide "token" strings.
  .
- This package contains the header file for libfsmtrie.
+ This package contains the static library and header file for libfsmtrie.

@@ -1,6 +1,11 @@
-fsmtrie (1.1.0-1) UNRELEASED; urgency=medium
+fsmtrie (1.1.0-1) debian-farsightsec; urgency=medium
 
-  * Add new API function fsmtrie_destroy() .
+  * Add new API functions fsmtrie_destroy() and fsmtrie_opt_destroy().
+    (The fsmtrie_free() and fsmtrie_opt_free() functions are now
+    deprecated.)
+
+  * Remove the static library and shared library symlink from the lib
+    package and install in the dev package instead.
 
  -- Farsight Security, Inc. <software@farsightsecurity.com>  Mon, 21 May 2018 11:19:16 -0400
 
