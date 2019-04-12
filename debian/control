@@ -24,7 +24,7 @@ Description: Fast String Matching library
 Package: libfsmtrie-dev
 Section: libdevel
 Architecture: any
-Depends: libfsmtrie1 (= ${binary:Version}), ${misc:Depends}
+Depends: libfsmtrie1 (= ${binary:Version}), libbsd-dev, ${misc:Depends}
 Description: Fast String Matching library (development files)
  This is the Fast String Matcher Trie project. This C-based library
  provides a simple API for the storage and fast matching of ASCII,
