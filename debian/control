@@ -7,7 +7,8 @@ Build-Depends:
  dh-autoreconf,
  pkg-config,
  libbsd-dev,
- check (>= 0.9.10~)
+ check (>= 0.9.10~),
+ lcov,
 Standards-Version: 3.9.8
 
 Package: libfsmtrie1
