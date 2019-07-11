@@ -1,4 +1,6 @@
 *.[1-9]
+*.gcda
+*.gcno
 *.la
 *.lo
 *.o
@@ -26,6 +28,8 @@ config.status
 config.sub
 configure
 configure.scan
+coverage.info
+coveragereport
 depcomp
 doc/doxygen/Doxyfile
 doc/doxygen/doxygen.warnings
