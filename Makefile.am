@@ -43,7 +43,7 @@ nobase_include_HEADERS = fsmtrie/fsmtrie.h fsmtrie/version.h
 fsmtrieinclude_HEADERS 	 =
 
 lib_LTLIBRARIES			  = fsmtrie/libfsmtrie.la
-fsmtrie_libfsmtrie_la_CFLAGS     	  = $(my_CFLAGS)
+fsmtrie_libfsmtrie_la_CFLAGS     	  = $(AM_CFLAGS)
 fsmtrie_libfsmtrie_la_SOURCES    	  = fsmtrie/fsmtrie.c \
 				    fsmtrie/asearch.c \
 				    fsmtrie/subsearch.c \
