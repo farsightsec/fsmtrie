@@ -76,6 +76,9 @@ AC_SUBST(strlcpy_LIBS)
 AC_CONFIG_FILES([tests/run_examples_tests.sh],
                 [chmod +x tests/run_examples_tests.sh])
 
+m4_include([m4/my_code_coverage.m4])
+MY_CODE_COVERAGE
+
 AC_OUTPUT
 AC_MSG_RESULT([
     $PACKAGE $VERSION
@@ -92,4 +95,5 @@ AC_MSG_RESULT([
 
         building html docs:         ${DOC_HTML_MSG}
         make check available:       ${CHECK_MOD_MSG}
+        code coverage enabled:      ${CODE_COVERAGE_ENABLED}
 ])
