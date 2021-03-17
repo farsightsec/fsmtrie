@@ -87,7 +87,7 @@ int main(int argc, char **argv)
 	}
 
 	printf("Initializing new EASCII fsmtrie\n");
-	fsmtrie = fsmtrie_init(opt, err_buf);
+	fsmtrie = fsmtrie_init(opt, err_buf, sizeof (err_buf));
 	if (fsmtrie == NULL)
 	{
 		fprintf(stderr, "%s\n", err_buf);

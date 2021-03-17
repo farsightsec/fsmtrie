@@ -69,7 +69,7 @@ fsmtrie_get_error(struct fsmtrie *f)
 }
 
 struct fsmtrie *
-fsmtrie_init(struct fsmtrie_opt *o, char *err_buf)
+fsmtrie_init(struct fsmtrie_opt *o, char *err_buf, size_t err_buf_len)
 {
 	struct fsmtrie *f;
 	fsmtrie_mode mode;
@@ -79,7 +79,7 @@ fsmtrie_init(struct fsmtrie_opt *o, char *err_buf)
 	f = calloc(1, sizeof (struct fsmtrie));
 	if (f == NULL)
 	{
-		snprintf(err_buf, BUFSIZ - 1, "can't allocate fsmtrie: %s",
+		snprintf(err_buf, err_buf_len, "can't allocate fsmtrie: %s",
 				strerror(errno));
 		return (NULL);
 	}
@@ -553,7 +553,7 @@ fsmtrie_insert_token(struct fsmtrie *f, uint32_t *tkey, size_t nkey, const char 
 	for (node_p = f->root, last_parent = NULL, tokidx = 0;
 			tokidx < nkey; tokidx++)
 	{
-		fsmtrie_node_t *node_pp = node_p; 
+		fsmtrie_node_t *node_pp = node_p;
 		int ires;
 		size_t nidx, nnodes;
 
