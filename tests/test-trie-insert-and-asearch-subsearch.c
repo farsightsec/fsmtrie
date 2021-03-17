@@ -79,7 +79,8 @@ START_TEST(test_trie_insert_and_asearch_subsearch)
 	ck_assert_int_eq(fsmtrie_opt_set_mode(opt, fsmtrie_mode_ascii), 1);
 	ck_assert_int_eq(fsmtrie_opt_set_maxlength(opt, 64), 1);
 	ck_assert_int_eq(fsmtrie_opt_set_partialmatch(opt, true), 1);
-	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf), NULL);
+	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf, sizeof (err_buf)),
+	    NULL);
 
 	for (n = 0; keys[n]; n++)
 	{

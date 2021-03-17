@@ -33,7 +33,8 @@ START_TEST(test_trie_insert_and_search)
 	ck_assert_int_eq(fsmtrie_opt_set_mode(opt, fsmtrie_mode_ascii), 1);
 	ck_assert_int_eq(fsmtrie_opt_set_maxlength(opt, 64), 1);
 	ck_assert_int_eq(fsmtrie_opt_set_partialmatch(opt, true), 1);
-	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf), NULL);
+	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf, sizeof (err_buf)),
+	    NULL);
 
 	for (n = 0; keys[n]; n++)
 	{
@@ -110,7 +111,8 @@ START_TEST(test_trie_insert_and_search_token)
 	ck_assert_ptr_ne(opt = fsmtrie_opt_init(), NULL);
 	ck_assert_int_eq(fsmtrie_opt_set_mode(opt, fsmtrie_mode_token), 1);
 	ck_assert_int_eq(fsmtrie_opt_set_maxlength(opt, 10), 1);
-	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf), NULL);
+	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf, sizeof (err_buf)),
+	    NULL);
 
 	for (n = 0; n < 10; n++)
 	{
@@ -159,7 +161,8 @@ START_TEST(test_trie_insert_and_search_ml)
 	ck_assert_int_eq(fsmtrie_opt_set_mode(opt, fsmtrie_mode_ascii), 1);
 	max_len = strlen(keys[0]);
 	ck_assert_int_eq(fsmtrie_opt_set_maxlength(opt, max_len), 1);
-	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf), NULL);
+	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf, sizeof (err_buf)),
+	    NULL);
 
 	/* fits */
 	ck_assert_int_eq(fsmtrie_insert(fsmtrie, keys[0], keys[0]), 1);
@@ -197,7 +200,8 @@ START_TEST(test_trie_insert_and_search_utf8)
 	ck_assert_ptr_ne(opt = fsmtrie_opt_init(), NULL);
 	ck_assert_int_eq(fsmtrie_opt_set_mode(opt, fsmtrie_mode_eascii), 1);
 	ck_assert_int_eq(fsmtrie_opt_set_partialmatch(opt, true), 1);
-	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf), NULL);
+	ck_assert_ptr_ne(fsmtrie = fsmtrie_init(opt, err_buf, sizeof (err_buf)),
+	    NULL);
 
 	for (n = 0; keys[n]; n++)
 	{
