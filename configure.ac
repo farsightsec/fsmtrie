@@ -5,6 +5,8 @@ m4_define(fsmtrie_minor_version, 1)
 m4_define(fsmtrie_patchlevel_version, 0)
 m4_define(fsmtrie_version,
           fsmtrie_major_version.fsmtrie_minor_version.fsmtrie_patchlevel_version)
+m4_define(fsmtrie_version_number,
+	  m4_eval(fsmtrie_major_version * 1000000 + fsmtrie_minor_version * 1000 + fsmtrie_patchlevel_version))
 
 AC_INIT([fsmtrie],
 	[fsmtrie_version()],
@@ -26,11 +28,13 @@ FSMTRIE_MAJOR_VERSION=fsmtrie_major_version()
 FSMTRIE_MINOR_VERSION=fsmtrie_minor_version()
 FSMTRIE_PATCHLEVEL_VERSION=fsmtrie_patchlevel_version()
 FSMTRIE_VERSION=fsmtrie_version()
+FSMTRIE_VERSION_NUMBER=fsmtrie_version_number()
 
 AC_SUBST(FSMTRIE_MAJOR_VERSION)
 AC_SUBST(FSMTRIE_MINOR_VERSION)
 AC_SUBST(FSMTRIE_PATCHLEVEL_VERSION)
 AC_SUBST(FSMTRIE_VERSION)
+AC_SUBST(FSMTRIE_VERSION_NUMBER)
 
 AC_PROG_LN_S
 
