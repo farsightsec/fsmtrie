@@ -106,7 +106,7 @@ fsmtrie_init(struct fsmtrie_opt *o, char *err_buf, size_t err_buf_len)
 		case fsmtrie_mode_token:
 			if (flags & FSMTRIE_PM_OK)
 			{
-				snprintf(err_buf, BUFSIZ - 1,
+				snprintf(err_buf, err_buf_len,
 						"partial match not allowed for"
 					        " token fsmtries");
 				free(f);
@@ -116,7 +116,7 @@ fsmtrie_init(struct fsmtrie_opt *o, char *err_buf, size_t err_buf_len)
 			f->nrnodes = 0;
 			break;
 		default:
-			snprintf(err_buf, BUFSIZ - 1,
+			snprintf(err_buf, err_buf_len,
 					"unrecognized mode \"%d\"", mode);
 			free(f);
 			return (NULL);
@@ -124,7 +124,7 @@ fsmtrie_init(struct fsmtrie_opt *o, char *err_buf, size_t err_buf_len)
 
 	if (f->root == NULL)
 	{
-		snprintf(err_buf, BUFSIZ - 1, "can't allocate root node: %s",
+		snprintf(err_buf, err_buf_len, "can't allocate root node: %s",
 				strerror(errno));
 		free(f);
 		return (NULL);
