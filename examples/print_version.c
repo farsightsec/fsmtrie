@@ -11,7 +11,7 @@ main(int argc, char **argv) {
 /* to do compile-time checking, do something like the following: */
 #if FSMTRIE_LIBRARY_VERSION_NUMBER >= 1000000
 	printf("your install of libfsmtrie supports compile-time versioning ");
-	printf("(FSMTRIE_LIBRARY_VERSION_NUMBER == %lu)\n",
+	printf("(FSMTRIE_LIBRARY_VERSION_NUMBER == %d)\n",
 			FSMTRIE_LIBRARY_VERSION_NUMBER);
 #else
 	printf("your install of libfsmtrie predates versioning, consider an upgrade\n");

@@ -7,7 +7,8 @@ Build-Depends:
  dh-autoreconf,
  pkg-config,
  libbsd-dev,
- check (>= 0.9.10~)
+ check (>= 0.9.10~),
+ lcov,
 Standards-Version: 3.9.8
 
 Package: libfsmtrie1
@@ -24,7 +25,7 @@ Description: Fast String Matching library
 Package: libfsmtrie-dev
 Section: libdevel
 Architecture: any
-Depends: libfsmtrie1 (= ${binary:Version}), ${misc:Depends}
+Depends: libfsmtrie1 (= ${binary:Version}), libbsd-dev, ${misc:Depends}
 Description: Fast String Matching library (development files)
  This is the Fast String Matcher Trie project. This C-based library
  provides a simple API for the storage and fast matching of ASCII,

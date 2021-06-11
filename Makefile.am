@@ -22,6 +22,14 @@ AM_TESTS_ENVIRONMENT = top_builddir='$(top_builddir)'; \
 		       top_srcdir='$(top_srcdir)'; \
 		       export top_builddir top_srcdir;
 TESTS_ENVIRONMENT = $(AM_TESTS_ENVIRONMENT)
+AM_LDFLAGS =
+
+# code coverage
+AM_CFLAGS += ${CODE_COVERAGE_CFLAGS}
+AM_LDFLAGS += ${CODE_COVERAGE_LDFLAGS}
+CODE_COVERAGE_LCOV_OPTIONS = --no-external
+CODE_COVERAGE_IGNORE_PATTERN = "$(abs_top_builddir)/tests/*"
+@CODE_COVERAGE_RULES@
 
 EXTRA_DIST       = COPYRIGHT
 EXTRA_DIST       += README.md
@@ -35,7 +43,7 @@ nobase_include_HEADERS = fsmtrie/fsmtrie.h fsmtrie/version.h
 fsmtrieinclude_HEADERS 	 =
 
 lib_LTLIBRARIES			  = fsmtrie/libfsmtrie.la
-fsmtrie_libfsmtrie_la_CFLAGS     	  = $(my_CFLAGS)
+fsmtrie_libfsmtrie_la_CFLAGS     	  = $(AM_CFLAGS)
 fsmtrie_libfsmtrie_la_SOURCES    	  = fsmtrie/fsmtrie.c \
 				    fsmtrie/asearch.c \
 				    fsmtrie/subsearch.c \

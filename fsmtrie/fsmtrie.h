@@ -126,7 +126,7 @@ typedef struct fsmtrie_opt * fsmtrie_opt_t;
  *  \returns a valid pointer to a new fsmtrie or NULL and err_buf will contain
  *  the reason
  */
-fsmtrie_t fsmtrie_init(fsmtrie_opt_t opt, char *err_buf);
+fsmtrie_t fsmtrie_init(fsmtrie_opt_t opt, char *err_buf, size_t err_buf_len);
 
 /**
  *  Initialize a new fsmtrie options object. This function MUST be called
@@ -375,7 +375,7 @@ int fsmtrie_search_token(fsmtrie_t fsmtrie, const uint32_t *key,
  * most \p dist characters (this is a bounded edit distance search).
  *
  * Valid for \p fsmtrie_mode_ascii and \p fsmtrie_mode_eascii fsmtries.
- * 
+ *
  * The callback has the following prototype:
  *
  *`static void cb(const char *str, int dist, void *data);`
