@@ -1,3 +1,15 @@
+fsmtrie (2.0.0-1) debian-fsi; urgency=medium
+
+  * fsmtrie_init() should not assume the size of its error buffer argument.
+    Added length argument to fsmtrie_init(). This changes to API.
+    Major interface change so new library package is libfsmtrie2.
+
+  * Added code coverage option to configure/make build system.
+
+  * Depend on libbsd.
+
+ -- Farsight Security, Inc. <software@farsightsecurity.com>  Mon, 16 Aug 2021 13:37:32 -0400
+
 fsmtrie (1.1.0-1) debian-farsightsec; urgency=medium
 
   * Add new API functions fsmtrie_destroy() and fsmtrie_opt_destroy().
