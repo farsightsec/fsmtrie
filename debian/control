@@ -11,7 +11,7 @@ Build-Depends:
  lcov,
 Standards-Version: 3.9.8
 
-Package: libfsmtrie1
+Package: libfsmtrie3
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
@@ -25,7 +25,7 @@ Description: Fast String Matching library
 Package: libfsmtrie-dev
 Section: libdevel
 Architecture: any
-Depends: libfsmtrie1 (= ${binary:Version}), libbsd-dev, ${misc:Depends}
+Depends: libfsmtrie3 (= ${binary:Version}), libbsd-dev, ${misc:Depends}
 Description: Fast String Matching library (development files)
  This is the Fast String Matcher Trie project. This C-based library
  provides a simple API for the storage and fast matching of ASCII,
