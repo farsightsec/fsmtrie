@@ -80,8 +80,33 @@ AC_SUBST(strlcpy_LIBS)
 AC_CONFIG_FILES([tests/run_examples_tests.sh],
                 [chmod +x tests/run_examples_tests.sh])
 
-m4_include([m4/my_code_coverage.m4])
-MY_CODE_COVERAGE
+AC_ARG_WITH(coverage,
+[  --with-coverage[=PROGRAM]  enable test coverage target using the specified lcov], lcov="$withval", lcov="no")
+
+USE_LCOV="no"
+if test "$lcov" != "no"; then
+	if test "$lcov" != "yes"; then
+		LCOV=$lcov
+	else
+		AC_PATH_PROG([LCOV], [lcov])
+	fi
+	if test -x "${LCOV}"; then
+		USE_LCOV="yes"
+	else
+		AC_MSG_ERROR([Cannot find lcov.])
+	fi
+	# is genhtml always in the same directory?
+	GENHTML=`echo "$LCOV" | ${SED} s/lcov$/genhtml/`
+	if test ! -x $GENHTML; then
+		AC_MSG_ERROR([genhtml not found, needed for lcov])
+	fi
+	CFLAGS="$CFLAGS --coverage"
+	LIBS=" $LIBS -lgcov"
+	AC_SUBST(LIBS)
+	AC_SUBST(LCOV)
+	AC_SUBST(GENHTML)
+fi
+AC_SUBST(USE_LCOV)
 
 AC_OUTPUT
 AC_MSG_RESULT([
@@ -99,5 +124,5 @@ AC_MSG_RESULT([
 
         building html docs:         ${DOC_HTML_MSG}
         make check available:       ${CHECK_MOD_MSG}
-        code coverage enabled:      ${CODE_COVERAGE_ENABLED}
+        code coverage enabled:      ${USE_LCOV}
 ])
