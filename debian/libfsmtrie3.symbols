@@ -1,4 +1,4 @@
-libfsmtrie.so.2 libfsmtrie2 #MINVER#
+libfsmtrie.so.3 libfsmtrie3 #MINVER#
  _mode_to_str@Base 1.0.0
  fsmtrie_error@Base 1.0.0
  fsmtrie_free@Base 1.0.0
