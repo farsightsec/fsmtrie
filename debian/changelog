@@ -2,7 +2,7 @@ fsmtrie (2.0.0-1) debian-fsi; urgency=medium
 
   * fsmtrie_init() should not assume the size of its error buffer argument.
     Added length argument to fsmtrie_init(). This changes to API.
-    Major interface change so new library package is libfsmtrie2.
+    Major interface change so new library package is libfsmtrie3.
 
   * Added code coverage option to configure/make build system.
 
