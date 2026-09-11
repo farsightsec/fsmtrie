@@ -1,3 +1,9 @@
+fsmtrie (2.0.1) debian-fsi; urgency=medium
+
+  * TODO
+
+ -- DomainTools LLC <software@domaintools.com>  Thu, 11 Sep 2026 12:00:00 -0700
+
 fsmtrie (2.0.0-1) debian-fsi; urgency=medium
 
   * fsmtrie_init() should not assume the size of its error buffer argument.
